@@ -1,0 +1,84 @@
+[gd_scene load_steps=12 format=3 uid="uid://dyft0een7cxp7"]
+
+[ext_resource type="Script" uid="uid://dthuvqgurijt" path="res://scripts/NPCs/Elizabeth.gd" id="1_ye2is"]
+[ext_resource type="Texture2D" uid="uid://rn7ylxv2kgdr" path="res://escenas/NPCs/esqueleto_bueno_idle_verde_v01.png" id="2_ye2is"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sgv5l"]
+atlas = ExtResource("2_ye2is")
+region = Rect2(0, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vow2h"]
+atlas = ExtResource("2_ye2is")
+region = Rect2(96, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_geg8e"]
+atlas = ExtResource("2_ye2is")
+region = Rect2(192, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8kite"]
+atlas = ExtResource("2_ye2is")
+region = Rect2(288, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wwsrx"]
+atlas = ExtResource("2_ye2is")
+region = Rect2(384, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yfml4"]
+atlas = ExtResource("2_ye2is")
+region = Rect2(480, 0, 96, 96)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2oond"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sgv5l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vow2h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_geg8e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8kite")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wwsrx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yfml4")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_j1xmr"]
+radius = 63.07139
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m74cb"]
+size = Vector2(31, 55.5)
+
+[node name="Oliver" type="CharacterBody2D"]
+collision_layer = 4
+collision_mask = 21
+script = ExtResource("1_ye2is")
+timelineName = "eli"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_2oond")
+animation = &"idle"
+
+[node name="chatDetection" type="Area2D" parent="."]
+position = Vector2(0, 7)
+collision_mask = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="chatDetection"]
+shape = SubResource("CircleShape2D_j1xmr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 12)
+shape = SubResource("RectangleShape2D_m74cb")
+
+[connection signal="body_entered" from="chatDetection" to="." method="_on_chat_detection_body_entered"]
+[connection signal="body_exited" from="chatDetection" to="." method="_on_chat_detection_body_exited"]

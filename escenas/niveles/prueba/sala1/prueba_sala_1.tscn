@@ -1,0 +1,66 @@
+[gd_scene load_steps=9 format=4 uid="uid://dvrlg768whcwe"]
+
+[ext_resource type="Script" uid="uid://bse6ye3xiuj6r" path="res://scripts/salas_match_position.gd" id="1_le7ol"]
+[ext_resource type="Texture2D" uid="uid://bx7fgcwrgdv8d" path="res://tile_sets/tileset_mazmorra.png" id="2_aub2a"]
+[ext_resource type="PackedScene" uid="uid://m6fxul2tif0w" path="res://escenas/enemigos/fantasma_01/fantasma.tscn" id="3_umhbh"]
+[ext_resource type="PackedScene" uid="uid://bl36h3qyxbcet" path="res://escenas/personaje/personaje.tscn" id="4_kuwlp"]
+[ext_resource type="Script" uid="uid://b2pv6wseiwdg7" path="res://scripts/puerta.gd" id="5_boa7u"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ov8gy"]
+texture = ExtResource("2_aub2a")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_ucj66"]
+physics_layer_0/collision_layer = 1
+physics_layer_0/collision_mask = 21
+physics_layer_1/collision_layer = 32
+physics_layer_1/collision_mask = 4
+sources/0 = SubResource("TileSetAtlasSource_ov8gy")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_08fee"]
+size = Vector2(32, 64)
+
+[node name="Cueva_Sala1" type="Node2D" node_paths=PackedStringArray("entrada_der")]
+script = ExtResource("1_le7ol")
+entrada_der = NodePath("puerta_transition_point/CollisionShape2D")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+scale = Vector2(2, 2)
+tile_map_data = PackedByteArray("AAACAPz/AAAAAAAAAAABAPz/AAAAAAAAAAAAAPz/AAAAAAAAAAD///z/AAAAAAAAAAD+//z/AAAAAAAAAAD9//z/AAAAAAAAAAD8//z/AAAAAAAAAAD8//3/AAAAAAAAAAD8//7/AAAAAAAAAAD8////AAAAAAAAAAD8/wAAAAAAAAAAAAD8/wEAAAAAAAAAAAD8/wIAAAAAAAAAAAD9/wMAAAAAAAAAAAD8/wMAAAAAAAAAAAD+/wMAAAAAAAAAAAD//wMAAAAAAAAAAAAAAAMAAAAAAAAAAAABAAMAAAAAAAAAAAACAAMAAAAAAAAAAAADAAMAAAAAAAAAAAAEAAMAAAAAAAAAAAADAPz/AAAAAAAAAAAEAPz/AAAAAAAAAAAFAPz/AAAAAAAAAAAGAPz/AAAAAAAAAAAHAPz/AAAAAAAAAAAIAPz/AAAAAAAAAAAJAPz/AAAAAAAAAAAKAPz/AAAAAAAAAAALAPz/AAAAAAAAAAAMAPz/AAAAAAAAAAAFAAMAAAAAAAAAAAAGAAMAAAAAAAAAAAAHAAMAAAAAAAAAAAAIAAMAAAAAAAAAAAAJAAMAAAAAAAAAAAAKAAMAAAAAAAAAAAALAAMAAAAAAAAAAAAMAAMAAAAAAAAAAAANAAMAAAAAAAAAAAAOAAMAAAAAAAAAAAANAPz/AAAAAAAAAAAOAPz/AAAAAAAAAAAPAPz/AAAAAAAAAAAQAPz/AAAAAAAAAAAQAP3/AAAAAAAAAAAQAP7/AAAAAAAAAAAQAAEAAAAAAAAAAAAQAAIAAAAAAAAAAAAQAAMAAAAAAAAAAAAPAAMAAAAAAAAAAAAQAP//AAAAAAMAAAAQAAAAAAAAAAMAAAA=")
+tile_set = SubResource("TileSet_ucj66")
+
+[node name="Fantasma" parent="." node_paths=PackedStringArray("character") instance=ExtResource("3_umhbh")]
+position = Vector2(219, -34)
+character = NodePath("../Personaje")
+
+[node name="Personaje" parent="." instance=ExtResource("4_kuwlp")]
+
+[node name="collisions" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="collisions"]
+position = Vector2(273, -3)
+polygon = PackedVector2Array(271, -64, 271, 64, 302, 64, 302, -64)
+
+[node name="puerta_transition_point" type="Area2D" parent="."]
+collision_mask = 5
+script = ExtResource("5_boa7u")
+nextScene = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="puerta_transition_point"]
+position = Vector2(528, 0)
+shape = SubResource("RectangleShape2D_08fee")

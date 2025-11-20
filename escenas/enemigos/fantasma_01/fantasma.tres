@@ -1,0 +1,39 @@
+[gd_resource type="SpriteFrames" load_steps=6 format=3 uid="uid://du0j320ifcgqx"]
+
+[ext_resource type="Texture2D" uid="uid://dj5qx3t3f8ouv" path="res://sprites/FANTASMA_idle_violeta_v01.png" id="1_0kwj3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vu8i2"]
+atlas = ExtResource("1_0kwj3")
+region = Rect2(0, 0, 101, 104)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ert2q"]
+atlas = ExtResource("1_0kwj3")
+region = Rect2(101, 0, 101, 104)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tawm2"]
+atlas = ExtResource("1_0kwj3")
+region = Rect2(202, 0, 101, 104)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qy4n0"]
+atlas = ExtResource("1_0kwj3")
+region = Rect2(303, 0, 101, 104)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vu8i2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ert2q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tawm2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qy4n0")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]

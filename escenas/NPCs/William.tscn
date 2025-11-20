@@ -1,0 +1,140 @@
+[gd_scene load_steps=20 format=3 uid="uid://oli7p68luu76"]
+
+[ext_resource type="Script" uid="uid://b6ej81c4mfecw" path="res://scripts/NPCs/William.gd" id="1_mjyh0"]
+[ext_resource type="Texture2D" uid="uid://ddbo08yon1fbb" path="res://escenas/NPCs/esqueleto_idle_morado_v01.png" id="2_b4ew1"]
+[ext_resource type="Texture2D" uid="uid://c6nauaaawnjpd" path="res://escenas/NPCs/esqueleto_bueno_walk_morado_v01.png" id="3_ckw31"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gyro5"]
+atlas = ExtResource("2_b4ew1")
+region = Rect2(0, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1xl7u"]
+atlas = ExtResource("2_b4ew1")
+region = Rect2(96, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bp3i4"]
+atlas = ExtResource("2_b4ew1")
+region = Rect2(192, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_16tjj"]
+atlas = ExtResource("2_b4ew1")
+region = Rect2(288, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pmr0o"]
+atlas = ExtResource("2_b4ew1")
+region = Rect2(384, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b03cd"]
+atlas = ExtResource("2_b4ew1")
+region = Rect2(480, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qjm1n"]
+atlas = ExtResource("3_ckw31")
+region = Rect2(0, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5kr2s"]
+atlas = ExtResource("3_ckw31")
+region = Rect2(96, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b05hg"]
+atlas = ExtResource("3_ckw31")
+region = Rect2(192, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s7j8p"]
+atlas = ExtResource("3_ckw31")
+region = Rect2(288, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_obq8a"]
+atlas = ExtResource("3_ckw31")
+region = Rect2(384, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gxlr3"]
+atlas = ExtResource("3_ckw31")
+region = Rect2(480, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h6wnh"]
+atlas = ExtResource("3_ckw31")
+region = Rect2(576, 0, 96, 96)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jtj6d"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gyro5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1xl7u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bp3i4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_16tjj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pmr0o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b03cd")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qjm1n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5kr2s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b05hg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s7j8p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_obq8a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gxlr3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h6wnh")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 7.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_j1xmr"]
+radius = 35.128338
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m74cb"]
+size = Vector2(24, 47)
+
+[node name="William" type="CharacterBody2D"]
+collision_mask = 5
+script = ExtResource("1_mjyh0")
+timelineName = "Dialogo_william"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_jtj6d")
+animation = &"idle"
+frame = 5
+frame_progress = 0.046247263
+
+[node name="chatDetection" type="Area2D" parent="."]
+collision_mask = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="chatDetection"]
+position = Vector2(0, 4)
+shape = SubResource("CircleShape2D_j1xmr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 8.5)
+shape = SubResource("RectangleShape2D_m74cb")
+
+[connection signal="body_entered" from="chatDetection" to="." method="_on_chat_detection_body_entered"]
+[connection signal="body_exited" from="chatDetection" to="." method="_on_chat_detection_body_exited"]

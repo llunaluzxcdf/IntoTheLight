@@ -1,0 +1,71 @@
+[gd_resource type="SpriteFrames" load_steps=9 format=3 uid="uid://dravex6ul8r7"]
+
+[ext_resource type="Texture2D" uid="uid://cc833ft8ds1h2" path="res://sprites/novia1_idle.png" id="1_rtu35"]
+[ext_resource type="Texture2D" uid="uid://bmt1rmkvfip4" path="res://sprites/novia1_cry.png" id="2_6rlxn"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rtu35"]
+atlas = ExtResource("2_6rlxn")
+region = Rect2(0, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6rlxn"]
+atlas = ExtResource("2_6rlxn")
+region = Rect2(96, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mwg2o"]
+atlas = ExtResource("1_rtu35")
+region = Rect2(0, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a581k"]
+atlas = ExtResource("1_rtu35")
+region = Rect2(96, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0a07v"]
+atlas = ExtResource("2_6rlxn")
+region = Rect2(0, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uxtbb"]
+atlas = ExtResource("2_6rlxn")
+region = Rect2(96, 0, 96, 96)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rtu35")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6rlxn")
+}],
+"loop": true,
+"name": &"cry",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mwg2o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a581k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0a07v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uxtbb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mwg2o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a581k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mwg2o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a581k")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 3.0
+}]

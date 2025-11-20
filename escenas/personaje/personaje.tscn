@@ -1,0 +1,54 @@
+[gd_scene load_steps=6 format=3 uid="uid://bl36h3qyxbcet"]
+
+[ext_resource type="SpriteFrames" uid="uid://dfptb2y53nyeb" path="res://escenas/personaje/sprite_frames_carmelia.tres" id="1_jqp8e"]
+[ext_resource type="Script" uid="uid://b1iq7x8yvcjx8" path="res://escenas/personaje/personaje.gd" id="1_yv5yb"]
+[ext_resource type="PackedScene" uid="uid://b5xcwdd1a7n2o" path="res://escenas/personaje/lucero.tscn" id="3_wky4x"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jqp8e"]
+size = Vector2(37, 24.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yv5yb"]
+size = Vector2(38, 51.5)
+
+[node name="Personaje" type="CharacterBody2D" node_paths=PackedStringArray("animacion", "area_2d", "area_pinchos", "lucero", "sprite")]
+collision_layer = 4
+collision_mask = 17
+script = ExtResource("1_yv5yb")
+animacion = NodePath("AnimatedSprite2D")
+area_2d = NodePath("Area2D")
+area_pinchos = NodePath("pinchos")
+lucero = NodePath("lucero")
+sprite = NodePath("AnimatedSprite2D")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(2, -23)
+sprite_frames = ExtResource("1_jqp8e")
+animation = &"muerta"
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1.25)
+shape = SubResource("RectangleShape2D_jqp8e")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(3, 3)
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -12.25)
+shape = SubResource("RectangleShape2D_yv5yb")
+
+[node name="lucero" parent="." instance=ExtResource("3_wky4x")]
+
+[node name="pinchos" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="pinchos"]
+position = Vector2(0, 1.25)
+shape = SubResource("RectangleShape2D_jqp8e")
+
+[connection signal="body_entered" from="pinchos" to="." method="_on_pinchos_body_entered"]

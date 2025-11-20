@@ -1,0 +1,32 @@
+Carmelia: Oh...
+Elisabeth: ¿Huh?
+Carmelia: Elizabeth...
+Elisabeth: ¿Carmelia?
+Elisabeth: ¿De verdad eres tu?"
+Carmelia: Lo siento mucho, amor
+Elisabeth: No sabes lo difícil que está siendo todo esto para mí.
+Elisabeth: Todo el mundo me dice que tengo que ser fuerte, que no puedo quedarme todo el día frente a tu tumba."
+Carmelia: ...
+Elisabeth: No es justo...
+Carmelia: Lo sé, Eli. Lo siento
+Elisabeth: No es tu culpa.
+Carmelia: Escúchame, amor
+Carmelia: He recorrido medio inframundo. Al principio no recordaba lo que había pasado...
+Carmelia: Solo quería volver a casa. Luego me di cuenta de lo que pasaba y supe que tenía que volver a verte.
+Elisabeth: No te vas a quedar... ¿Para qué entonces?
+Carmelia: Para poder recordarte lo mucho que te quiero.
+Carmelia: Y para decirte que, pase lo que pase, te voy a esperar.
+Carmelia: Te voy a esperar el tiempo que haga falta y volveremos a reunirnos. Estaremos juntas de nuevo, y esta vez ya nada nos va a separar.
+Elisabeth: Te voy a echar de menos.
+Carmelia: Sé paciente mi amor.
+Carmelia: Te quiero, Eli.
+Elisabeth: Y yo...
+[wait time="2.0"]
+[background arg="res://escenas/creditos/creditos1.png" fade="0.5"]
+[wait time="2.0" hide_text="false"]
+[background arg="res://escenas/creditos/creditos2.png" fade="0.5"]
+[wait time="2.0"]
+[background arg="res://escenas/creditos/creditos3.png" fade="0.5"]
+[wait time="2.0" hide_text="false"]
+[background arg="res://escenas/creditos/creditos4.png" fade="1.0"]
+[wait time="2.0" hide_text="false"]

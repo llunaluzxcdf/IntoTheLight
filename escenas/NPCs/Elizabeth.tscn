@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://7n1fqo744xyb"]
+
+[ext_resource type="Script" uid="uid://dthuvqgurijt" path="res://scripts/NPCs/Elizabeth.gd" id="1_hc80i"]
+[ext_resource type="SpriteFrames" uid="uid://dravex6ul8r7" path="res://sprites/novia.tres" id="1_nlbhq"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_j1xmr"]
+radius = 63.07139
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m74cb"]
+size = Vector2(49, 55.5)
+
+[node name="Elizabeth" type="CharacterBody2D"]
+collision_layer = 4
+collision_mask = 21
+script = ExtResource("1_hc80i")
+timelineName = "eli"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("1_nlbhq")
+animation = &"idle"
+
+[node name="chatDetection" type="Area2D" parent="."]
+position = Vector2(-21, 14)
+collision_mask = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="chatDetection"]
+shape = SubResource("CircleShape2D_j1xmr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-20.5, 12.75)
+shape = SubResource("RectangleShape2D_m74cb")
+
+[connection signal="body_entered" from="chatDetection" to="." method="_on_chat_detection_body_entered"]
+[connection signal="body_exited" from="chatDetection" to="." method="_on_chat_detection_body_exited"]

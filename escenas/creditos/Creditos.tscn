@@ -1,0 +1,169 @@
+[gd_scene load_steps=4 format=3 uid="uid://qmovghdsbhgx"]
+
+[ext_resource type="Script" uid="uid://dfdcdk3fxp73k" path="res://escenas/creditos/Creditos.gd" id="1_kwuv3"]
+[ext_resource type="Texture2D" uid="uid://ctjkki2vna3wv" path="res://escenas/creditos/foto.png" id="2_3ge84"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nfvq6"]
+bg_color = Color(0, 0, 0, 1)
+
+[node name="Scroll" type="ScrollContainer" node_paths=PackedStringArray("text_node")]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_nfvq6")
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 3
+script = ExtResource("1_kwuv3")
+text_node = NodePath("Margin/Label")
+
+[node name="Margin" type="MarginContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="RichTextLabel" parent="Margin"]
+layout_mode = 2
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+bbcode_enabled = true
+text = "[center]
+[b] Dirección Artística [/b] 
+Laura Marchal da Silva 
+
+[b] Arte [/b] 
+Laura Marchal Da Silva 
+Iria Lago Blanco 
+Ángela García Martínez 
+Cristina Montero Nogales 
+
+[b] Visual Development [/b] 
+Ángela García Martínez 
+Laura Marchal da Silva 
+
+[b] Animación [/b] 
+Cristina Montero Nogales 
+Iria Lago Blanco 
+
+[b] Diseño narrativo [/b] 
+Laura Marchal da Silva 
+Iria Lago Blanco 
+Cristina Montero Nogales 
+Ángela García Martínez 
+
+[b] Diseño de niveles y jugabilidad [/b] 
+Laura Marchal da Silva 
+Ismael Otálora Abril 
+Lluna García Fernández
+
+[b]Lead de programación[/b] 
+Noa Magariños Couselo 
+
+[b] Programación [/b] 
+Noa Magariños Couselo 
+Ismael Otálora Abril 
+Lluna García Fernández 
+
+[b] Sonido [/b] 
+Ismael Otálora Abril 
+
+[b] Pipeline [/b] 
+Lluna García Fernández 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+"
+fit_content = true
+
+[node name="foto" type="Sprite2D" parent="Margin"]
+position = Vector2(200, 980)
+texture = ExtResource("2_3ge84")
+centered = false

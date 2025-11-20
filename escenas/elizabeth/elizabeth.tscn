@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://dh3bxjvti8h6q"]
+
+[ext_resource type="SpriteFrames" uid="uid://dravex6ul8r7" path="res://sprites/novia.tres" id="1_c346m"]
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.75, 0.75)
+sprite_frames = ExtResource("1_c346m")
+animation = &"idle"
+frame_progress = 0.30586028
