@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://bet0s3fcd8uke"]
+[gd_scene load_steps=12 format=4 uid="uid://bet0s3fcd8uke"]
 
 [ext_resource type="TileSet" uid="uid://whserudwprm6" path="res://tile_sets/JAM_TileSet_cuevas.tres" id="1_2o2oe"]
 [ext_resource type="Script" uid="uid://bse6ye3xiuj6r" path="res://scripts/salas_match_position.gd" id="1_4iy1g"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bfgyx2abmdub0" path="res://escenas/NPCs/Trigger3.tscn" id="6_vvsfb"]
 [ext_resource type="Script" uid="uid://k5tcteb78oai" path="res://scripts/NPCs/Trigger2.gd" id="8_4iy1g"]
 [ext_resource type="PackedScene" uid="uid://dyft0een7cxp7" path="res://escenas/NPCs/o.tscn" id="10_4e4hk"]
+[ext_resource type="PackedScene" uid="uid://m6fxul2tif0w" path="res://escenas/enemigos/fantasma_01/fantasma.tscn" id="11_4iy1g"]
 [ext_resource type="PackedScene" uid="uid://b3r41k16y0tpb" path="res://escenas/puerta.tscn" id="11_nnfk5"]
 
 [node name="cueva_sala_3" type="Node2D" node_paths=PackedStringArray("entrada_izq", "entrada_arriba")]
@@ -71,6 +72,15 @@ nextScene = 4
 position = Vector2(525, 50)
 script = ExtResource("4_243en")
 timelineName = "dia_oliver"
+
+[node name="Fantasma" parent="." instance=ExtResource("11_4iy1g")]
+position = Vector2(371, -83)
+
+[node name="Fantasma2" parent="." instance=ExtResource("11_4iy1g")]
+position = Vector2(225, 35)
+
+[node name="Fantasma3" parent="." instance=ExtResource("11_4iy1g")]
+position = Vector2(463, -214)
 
 [editable path="puerta"]
 [editable path="puerta2"]

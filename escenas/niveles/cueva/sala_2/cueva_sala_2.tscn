@@ -65,6 +65,10 @@ position = Vector2(282, -14)
 polygon = PackedVector2Array(271, -64, 271, 64, 302, 64, 302, -64)
 
 [node name="Fantasma" parent="." node_paths=PackedStringArray("character") instance=ExtResource("6_0p3rc")]
+position = Vector2(293, -17)
+character = NodePath("../Personaje")
+
+[node name="Fantasma" parent="." node_paths=PackedStringArray("character") instance=ExtResource("6_0p3rc")]
 position = Vector2(92, -25)
 character = NodePath("../Personaje")
 
