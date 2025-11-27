@@ -37,7 +37,7 @@ tile_map_data = PackedByteArray("AAD///P/AQAAAAgAAAAAAPP/AQAAAAgAAAABAPP/AQAAAAg
 tile_set = ExtResource("1_o2jhw")
 
 [node name="Personaje" parent="." instance=ExtResource("2_kvqxe")]
-position = Vector2(123, -189)
+position = Vector2(410, 249)
 
 [node name="pinchos" type="Node2D" parent="." node_paths=PackedStringArray("pinchos")]
 script = ExtResource("1_kvqxe")
