@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=4 uid="uid://cr50tluma46q8"]
+[gd_scene load_steps=7 format=4 uid="uid://cr50tluma46q8"]
 
 [ext_resource type="Script" uid="uid://bse6ye3xiuj6r" path="res://scripts/salas_match_position.gd" id="1_hq7lt"]
 [ext_resource type="Script" uid="uid://b1t5uupykoj1l" path="res://escenas/niveles/cueva/sala_2/pinchos.gd" id="1_kvqxe"]
 [ext_resource type="TileSet" uid="uid://whserudwprm6" path="res://tile_sets/JAM_TileSet_cuevas.tres" id="1_o2jhw"]
 [ext_resource type="PackedScene" uid="uid://bl36h3qyxbcet" path="res://escenas/personaje/personaje.tscn" id="2_kvqxe"]
 [ext_resource type="PackedScene" uid="uid://b3r41k16y0tpb" path="res://escenas/puerta.tscn" id="5_pyytf"]
+[ext_resource type="PackedScene" uid="uid://m6fxul2tif0w" path="res://escenas/enemigos/fantasma_01/fantasma.tscn" id="6_0p3rc"]
 
 [node name="Cueva_Sala_2" type="Node2D" node_paths=PackedStringArray("entrada_izq", "entrada_der")]
 script = ExtResource("1_hq7lt")
@@ -37,7 +38,7 @@ tile_map_data = PackedByteArray("AAD///P/AQAAAAgAAAAAAPP/AQAAAAgAAAABAPP/AQAAAAg
 tile_set = ExtResource("1_o2jhw")
 
 [node name="Personaje" parent="." instance=ExtResource("2_kvqxe")]
-position = Vector2(410, 249)
+position = Vector2(98, -40)
 
 [node name="pinchos" type="Node2D" parent="." node_paths=PackedStringArray("pinchos")]
 script = ExtResource("1_kvqxe")
@@ -62,6 +63,10 @@ polygon = PackedVector2Array(271, -64, 271, 64, 302, 64, 302, -64)
 [node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="StaticBody2D"]
 position = Vector2(282, -14)
 polygon = PackedVector2Array(271, -64, 271, 64, 302, 64, 302, -64)
+
+[node name="Fantasma" parent="." node_paths=PackedStringArray("character") instance=ExtResource("6_0p3rc")]
+position = Vector2(139, 134)
+character = NodePath("../Personaje")
 
 [editable path="puerta"]
 [editable path="puerta2"]
