@@ -4,12 +4,12 @@
 [ext_resource type="Script" uid="uid://bse6ye3xiuj6r" path="res://scripts/salas_match_position.gd" id="1_4iy1g"]
 [ext_resource type="PackedScene" uid="uid://bl36h3qyxbcet" path="res://escenas/personaje/personaje.tscn" id="2_ycl78"]
 [ext_resource type="Script" uid="uid://cn24w4pxfn148" path="res://scripts/NPCs/Oliver.gd" id="4_243en"]
-[ext_resource type="PackedScene" path="res://escenas/NPCs/William.tscn" id="4_jrqfo"]
-[ext_resource type="Script" uid="uid://b6ej81c4mfecw" path="res://scripts/NPCs/William.gd" id="6_4e4hk"]
-[ext_resource type="PackedScene" path="res://escenas/NPCs/Trigger2.tscn" id="6_6h6ev"]
-[ext_resource type="PackedScene" path="res://escenas/NPCs/Trigger3.tscn" id="6_vvsfb"]
+[ext_resource type="PackedScene" uid="uid://oli7p68luu76" path="res://escenas/NPCs/William.tscn" id="4_jrqfo"]
+[ext_resource type="PackedScene" uid="uid://470tco2b7uh6" path="res://escenas/NPCs/Trigger2.tscn" id="6_6h6ev"]
+[ext_resource type="PackedScene" uid="uid://bfgyx2abmdub0" path="res://escenas/NPCs/Trigger3.tscn" id="6_vvsfb"]
 [ext_resource type="Script" uid="uid://k5tcteb78oai" path="res://scripts/NPCs/Trigger2.gd" id="8_4iy1g"]
 [ext_resource type="PackedScene" uid="uid://dyft0een7cxp7" path="res://escenas/NPCs/o.tscn" id="10_4e4hk"]
+[ext_resource type="PackedScene" uid="uid://m6fxul2tif0w" path="res://escenas/enemigos/fantasma_01/fantasma.tscn" id="11_4iy1g"]
 [ext_resource type="PackedScene" uid="uid://b3r41k16y0tpb" path="res://escenas/puerta.tscn" id="11_nnfk5"]
 
 [node name="cueva_sala_3" type="Node2D" node_paths=PackedStringArray("entrada_izq", "entrada_arriba")]
@@ -42,7 +42,6 @@ position = Vector2(77, 34)
 
 [node name="William" parent="." instance=ExtResource("4_jrqfo")]
 position = Vector2(330, -378)
-script = ExtResource("6_4e4hk")
 timelineName = "dia_william"
 
 [node name="Trigger2" parent="." instance=ExtResource("6_6h6ev")]
@@ -70,9 +69,18 @@ position = Vector2(432, -555)
 nextScene = 4
 
 [node name="Oliver" parent="." instance=ExtResource("10_4e4hk")]
-position = Vector2(528, -378)
+position = Vector2(525, 50)
 script = ExtResource("4_243en")
 timelineName = "dia_oliver"
+
+[node name="Fantasma" parent="." instance=ExtResource("11_4iy1g")]
+position = Vector2(371, -83)
+
+[node name="Fantasma2" parent="." instance=ExtResource("11_4iy1g")]
+position = Vector2(225, 35)
+
+[node name="Fantasma3" parent="." instance=ExtResource("11_4iy1g")]
+position = Vector2(463, -214)
 
 [editable path="puerta"]
 [editable path="puerta2"]
