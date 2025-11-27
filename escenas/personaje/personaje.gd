@@ -72,6 +72,10 @@ func _on_pinchos_body_entered(_body: Node2D) -> void:
 	sprite.self_modulate = Color(1.0, 1.0, 1.0, 1.0)
 
 func player():
+<<<<<<< HEAD
 	print ("helloooooo")
 	print("owo")
 	pass
+=======
+	print("helloooooooooooooooo")
+>>>>>>> origin/main
