@@ -68,19 +68,19 @@ polygon = PackedVector2Array(271, -64, 271, 64, 302, 64, 302, -64)
 position = Vector2(293, -17)
 character = NodePath("../Personaje")
 
-[node name="Fantasma" parent="." node_paths=PackedStringArray("character") instance=ExtResource("6_0p3rc")]
+[node name="Fantasma2" parent="." node_paths=PackedStringArray("character") instance=ExtResource("6_0p3rc")]
 position = Vector2(92, -25)
 character = NodePath("../Personaje")
 
-[node name="Fantasma2" parent="." node_paths=PackedStringArray("character") instance=ExtResource("6_0p3rc")]
+[node name="Fantasma3" parent="." node_paths=PackedStringArray("character") instance=ExtResource("6_0p3rc")]
 position = Vector2(429, 13)
 character = NodePath("../Personaje")
 
-[node name="Fantasma3" parent="." node_paths=PackedStringArray("character") instance=ExtResource("6_0p3rc")]
+[node name="Fantasma4" parent="." node_paths=PackedStringArray("character") instance=ExtResource("6_0p3rc")]
 position = Vector2(125, 146)
 character = NodePath("../Personaje")
 
-[node name="Fantasma4" parent="." node_paths=PackedStringArray("character") instance=ExtResource("6_0p3rc")]
+[node name="Fantasma5" parent="." node_paths=PackedStringArray("character") instance=ExtResource("6_0p3rc")]
 position = Vector2(400, -189)
 character = NodePath("../Personaje")
 
