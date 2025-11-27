@@ -1,13 +1,12 @@
-[gd_scene load_steps=12 format=4 uid="uid://bet0s3fcd8uke"]
+[gd_scene load_steps=11 format=4 uid="uid://bet0s3fcd8uke"]
 
 [ext_resource type="TileSet" uid="uid://whserudwprm6" path="res://tile_sets/JAM_TileSet_cuevas.tres" id="1_2o2oe"]
 [ext_resource type="Script" uid="uid://bse6ye3xiuj6r" path="res://scripts/salas_match_position.gd" id="1_4iy1g"]
 [ext_resource type="PackedScene" uid="uid://bl36h3qyxbcet" path="res://escenas/personaje/personaje.tscn" id="2_ycl78"]
 [ext_resource type="Script" uid="uid://cn24w4pxfn148" path="res://scripts/NPCs/Oliver.gd" id="4_243en"]
-[ext_resource type="PackedScene" path="res://escenas/NPCs/William.tscn" id="4_jrqfo"]
-[ext_resource type="Script" uid="uid://b6ej81c4mfecw" path="res://scripts/NPCs/William.gd" id="6_4e4hk"]
-[ext_resource type="PackedScene" path="res://escenas/NPCs/Trigger2.tscn" id="6_6h6ev"]
-[ext_resource type="PackedScene" path="res://escenas/NPCs/Trigger3.tscn" id="6_vvsfb"]
+[ext_resource type="PackedScene" uid="uid://oli7p68luu76" path="res://escenas/NPCs/William.tscn" id="4_jrqfo"]
+[ext_resource type="PackedScene" uid="uid://470tco2b7uh6" path="res://escenas/NPCs/Trigger2.tscn" id="6_6h6ev"]
+[ext_resource type="PackedScene" uid="uid://bfgyx2abmdub0" path="res://escenas/NPCs/Trigger3.tscn" id="6_vvsfb"]
 [ext_resource type="Script" uid="uid://k5tcteb78oai" path="res://scripts/NPCs/Trigger2.gd" id="8_4iy1g"]
 [ext_resource type="PackedScene" uid="uid://dyft0een7cxp7" path="res://escenas/NPCs/o.tscn" id="10_4e4hk"]
 [ext_resource type="PackedScene" uid="uid://b3r41k16y0tpb" path="res://escenas/puerta.tscn" id="11_nnfk5"]
@@ -42,7 +41,6 @@ position = Vector2(77, 34)
 
 [node name="William" parent="." instance=ExtResource("4_jrqfo")]
 position = Vector2(330, -378)
-script = ExtResource("6_4e4hk")
 timelineName = "dia_william"
 
 [node name="Trigger2" parent="." instance=ExtResource("6_6h6ev")]
@@ -70,7 +68,7 @@ position = Vector2(432, -555)
 nextScene = 4
 
 [node name="Oliver" parent="." instance=ExtResource("10_4e4hk")]
-position = Vector2(528, -378)
+position = Vector2(525, 50)
 script = ExtResource("4_243en")
 timelineName = "dia_oliver"
 
